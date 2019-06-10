@@ -324,7 +324,7 @@
               <MiscControls></MiscControls>
               <Define>FOSC_160000</Define>
               <Undefine></Undefine>
-              <IncludePath>..\user</IncludePath>
+              <IncludePath>..\user;..\user\IIC</IncludePath>
             </VariousControls>
           </C51>
           <Ax51>
@@ -390,6 +390,21 @@
               <FileName>adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\user\adc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>IIC</GroupName>
+          <Files>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\IIC\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>BH1750.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\IIC\BH1750.c</FilePath>
             </File>
           </Files>
         </Group>

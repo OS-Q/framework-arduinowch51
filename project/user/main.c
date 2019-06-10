@@ -10,7 +10,7 @@
 
 #include "adc.h"
 #include "uart.h"
-
+#include "BH1750.h"
 /*******************************************************************************
 * Function Name  : main
 * Description    : 
@@ -21,12 +21,10 @@
 
 void main(void) 
 {	
-	char *i ="test";
-	int x =3333;
+	u16 x =0;
 	InitUART();
+	//x =Convert_BH1750();
 	printf("power level=%d",x);
-	printf("power level=%s\n",i);
-	printf("power level=%d\n",(int)43);
 	while(1);
 }
 
