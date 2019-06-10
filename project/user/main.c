@@ -1,6 +1,6 @@
-#include <string.h>
-#include <intrins.h> 
-#include <stdio.h>
+//#include <string.h>
+//#include <intrins.h> 
+//#include <stdio.h>
 
 #include "common.h"
 #include "delay.h"
@@ -23,8 +23,9 @@ void main(void)
 {	
 	u16 x =0;
 	InitUART();
-	//x =Convert_BH1750();
-	printf("power level=%d",x);
-	while(1);
+	while(1){
+			x =Convert_BH1750();
+			printf(" level=%x",x);
+	}
 }
 

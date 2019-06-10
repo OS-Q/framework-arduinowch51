@@ -95,7 +95,7 @@ void Dvice_WriteData(unsigned char  DeciveAddr,unsigned char  DataAddr,unsigned 
     I2C_Send_Byte(DataAddr);
     I2C_Wait_Ack();
     I2C_Send_Byte(Data);
-	I2C_Wait_Ack();
+		I2C_Wait_Ack();
     I2C_Stop();     
 }
 
@@ -115,14 +115,14 @@ unsigned char  I2C_Read_Byte()
     unsigned char  i = 0;
     unsigned char  receive = 0;
     //数据线模式切换为输入
-	SDA_MODE_IN;
+		SDA_MODE_IN;
     for(i = 0;i < 8; i ++)
     {
         SCL_DATA = 0;
         I2C_Delay();
-		SCL_DATA = 1;
-		I2C_Delay();
-		receive <<= 1;
+				SCL_DATA = 1;
+				I2C_Delay();
+				receive <<= 1;
         //判断数据线电平
         if(SDA_DATA)
         {
@@ -133,7 +133,6 @@ unsigned char  I2C_Read_Byte()
 	I2C_Ack();
 	return receive;
 }
-
 //unsigned char  Decive_ReadData(unsigned char  DeciveAddr,unsigned char  DataAddr,unsigned char  ReciveData)
 //{
 //    unsigned char  i;
@@ -156,3 +155,26 @@ unsigned char  I2C_Read_Byte()
 //    I2C_Stop();
 //	return ReciveData;
 //}
+
+unsigned char  IIC_ReadData(unsigned char  DeciveAddr)
+{
+    unsigned char  i,ReciveData;
+    I2C_Start();
+//    I2C_Send_Byte(DeciveAddr);
+//    I2C_Wait_Ack();
+//    I2C_Send_Byte(DataAddr);                     
+//    I2C_Wait_Ack();     
+    //发送器件地址读模式
+    I2C_Send_Byte(DeciveAddr + 1);
+    //等待应答
+    I2C_Wait_Ack();
+    for(i = 0;i < 8;i ++)
+    {
+        ReciveData = I2C_Read_Byte();
+        ReciveData++;
+    }
+    //停止信号
+
+    I2C_Stop();
+		return ReciveData;
+}
