@@ -16,6 +16,7 @@ unsigned int LLX;
 
 void Delay_ms(int n)
 {
+	Timer0_Delay1ms(40);
 	Timer0_Delay1ms(n);
 }
 

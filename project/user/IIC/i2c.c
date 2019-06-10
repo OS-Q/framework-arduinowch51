@@ -39,19 +39,20 @@ void I2C_Start()
 //停止信号 
 void I2C_Stop()
 {
-		SDA_DATA = 0;
-//	I2C_Delay();
-		SCL_DATA = 1;
-		I2C_Delay();
-    //数据线上升沿
-    SDA_DATA = 1;
-//	I2C_Delay();
+	SDA_DATA = 0;
+	I2C_Delay();
+	SCL_DATA = 1;
+	I2C_Delay();
+  //数据线上升沿
+  SDA_DATA = 1;
+	I2C_Delay();
 }
 
 //写一个字节数据
 void I2C_Send_Byte(unsigned char  tx_data)
 {
     unsigned char  i;
+		SDA_MODE_OUT;
     for(i = 0;i < 8; i ++)
     {	
 			if (tx_data & 0x80)
@@ -144,6 +145,8 @@ unsigned char  I2C_Read_Byte(unsigned char ack)
 		//I2C_Ack();
 		return receive;
 }
+
+
 //unsigned char  I2C_Read_Byte()
 //{
 //    unsigned char  i = 0;
