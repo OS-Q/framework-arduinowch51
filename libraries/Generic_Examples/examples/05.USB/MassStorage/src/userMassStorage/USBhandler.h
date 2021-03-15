@@ -6,19 +6,18 @@
 #include "include/ch5xx_usb.h"
 #include "USBconstant.h"
 
-extern __xdata __at (EP0_ADDR) uint8_t  Ep0Buffer[];
-extern __xdata __at (EP1_ADDR) uint8_t  Ep1Buffer[];
-
 extern uint16_t SetupLen;
 extern uint8_t SetupReq,UsbConfig;
 extern const __code uint8_t *pDescr;
 
+void Mass_Storage_In (void);
+void Mass_Storage_Out (void);
 
 #define UsbSetupBuf     ((PUSB_SETUP_REQ)Ep0Buffer)
 
 // Out
 #define EP0_OUT_Callback USB_EP0_OUT
-#define EP1_OUT_Callback USB_EP1_OUT
+#define EP1_OUT_Callback Mass_Storage_Out
 #define EP2_OUT_Callback NOP_Process
 #define EP3_OUT_Callback NOP_Process
 #define EP4_OUT_Callback NOP_Process
@@ -32,7 +31,7 @@ extern const __code uint8_t *pDescr;
 
 // IN
 #define EP0_IN_Callback USB_EP0_IN
-#define EP1_IN_Callback USB_EP1_IN
+#define EP1_IN_Callback Mass_Storage_In
 #define EP2_IN_Callback NOP_Process
 #define EP3_IN_Callback NOP_Process
 #define EP4_IN_Callback NOP_Process

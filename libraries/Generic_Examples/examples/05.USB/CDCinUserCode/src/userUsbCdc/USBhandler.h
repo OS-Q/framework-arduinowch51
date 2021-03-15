@@ -2,8 +2,8 @@
 #define __USB_HANDLER_H__
 
 #include <stdint.h>
-#include "include/ch554.h"
-#include "include/ch554_usb.h"
+#include "include/ch5xx.h"
+#include "include/ch5xx_usb.h"
 #include "USBconstant.h"
 
 extern __xdata __at (EP0_ADDR) uint8_t  Ep0Buffer[];

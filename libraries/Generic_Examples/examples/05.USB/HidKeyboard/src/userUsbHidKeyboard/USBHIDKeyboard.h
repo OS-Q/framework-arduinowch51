@@ -2,8 +2,8 @@
 #define __USB_HID_KBD_H__
 
 #include <stdint.h>
-#include "include/ch554.h"
-#include "include/ch554_usb.h"
+#include "include/ch5xx.h"
+#include "include/ch5xx_usb.h"
 
 
 #define KEY_LEFT_CTRL   0x80

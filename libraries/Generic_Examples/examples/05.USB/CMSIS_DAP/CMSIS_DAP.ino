@@ -5,7 +5,12 @@
   RST   -> P30
   SWCLK -> P31
   SWDIO -> P32
-  These pins works in OC mode with pull-up resistor (70K). Should be safe to connect 3.3V part.
+  
+  These pins works in OC mode with pull-up resistor (70K). Should be safe to connect 3.3V part. 
+  However, CH552 is designed to use 2 clock of OUTPUT on rising egde in classic OC mode. Double check if this is a problem for your target.
+
+  nerdralph also reported reflections/ringing on some of SWD connection and cause error. Since CH552 doesn't have slew rate control, termination resistors may be required. 
+  nerdralph used 68Ohm series termination resistors to fix his ringing issue with 28AWG Dupont jumper wire.
 
   created 2020
   by Deqing Sun for use with CH55xduino

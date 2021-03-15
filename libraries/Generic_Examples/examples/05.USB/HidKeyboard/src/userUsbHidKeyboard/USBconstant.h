@@ -2,8 +2,8 @@
 #define __USB_CONST_DATA_H__
 
 #include <stdint.h>
-#include "include/ch554.h"
-#include "include/ch554_usb.h"
+#include "include/ch5xx.h"
+#include "include/ch5xx_usb.h"
 
 #define  EP0_ADDR 0
 #define  EP1_ADDR 10

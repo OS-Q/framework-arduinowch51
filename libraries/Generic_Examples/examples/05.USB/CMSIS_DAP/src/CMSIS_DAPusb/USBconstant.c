@@ -44,21 +44,21 @@ __code uint8_t CfgDesc[] ={
     0x22,       /* Descriptor type. */
     sizeof(ReportDesc) & 0xff,sizeof(ReportDesc) >> 8,    /* Total length of report descriptor. */
     
-    /* EP Descriptor: interrupt in. */
-    0x07,                       /* bLength */
-    0x05,                      /* bDescriptorType */
-    0x01,         /* bEndpointAddress */
-    0x03,                             /* bmAttributes */
-    0x40, 0x00,    /* wMaxPacketSize */
-    1,        /* bInterval */
+    // EP Descriptor: interrupt OUT.
+    0x07,                      // bLength
+    0x05,                      // bDescriptorType
+    0x01,                      // bEndpointAddress EP1 OUT
+    0x03,                      // bmAttributes
+    0x40, 0x00,                // wMaxPacketSize
+    1,                         // bInterval
     
-    /* EP Descriptor: interrupt out. */
-    0x07,                       /* bLength */
-    0x05,                      /* bDescriptorType */
-    0x81,       /* bEndpointAddress */
-    0x03,                             /* bmAttributes */
-    0x40, 0x00,    /* wMaxPacketSize */
-    1         /* bInterval */
+    // EP Descriptor: interrupt IN.
+    0x07,                      // bLength
+    0x05,                      // bDescriptorType
+    0x81,                      // bEndpointAddress EP1 IN
+    0x03,                      // bmAttributes
+    0x40, 0x00,                // wMaxPacketSize
+    1,                         // bInterval
     
     
 };

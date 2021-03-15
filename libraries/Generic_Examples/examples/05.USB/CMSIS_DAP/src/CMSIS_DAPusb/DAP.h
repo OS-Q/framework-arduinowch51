@@ -28,7 +28,7 @@
 #ifndef __DAP_H__
 #define __DAP_H__
 
-#include "include/ch554.h"
+#include "include/ch5xx.h"
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
@@ -197,7 +197,7 @@
 #define SWD_SEQUENCE_CLK 0x3FU // SWCLK count
 #define SWD_SEQUENCE_DIN 0x80U // SWDIO capture
 
-#define DAP_PACKET_COUNT 4
+#define DAP_PACKET_COUNT 1
 #define DAP_PACKET_SIZE 64 //THIS_ENDP0_SIZE
 #define DAP_DEFAULT_PORT DAP_PORT_SWD
 
