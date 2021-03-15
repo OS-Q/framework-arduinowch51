@@ -30,8 +30,8 @@
 //#include <avr/pgmspace.h>
 //#include <avr/io.h>
 //#include <avr/interrupt.h>
-#include "include/ch554.h"
-#include "include/ch554_usb.h"
+#include "include/ch5xx.h"
+#include "include/ch5xx_usb.h"
 #include "pins_arduino_include.h"
 //Macro-based digital IO fucntions
 #include "wiring_digital_fast.h"
@@ -169,7 +169,11 @@ void init(void);
 void pinMode(uint8_t pin, __xdata uint8_t mode);
 void digitalWrite(uint8_t pin, __xdata uint8_t val);
 uint8_t digitalRead(uint8_t pin);
+#if defined(CH559)
+uint16_t analogRead(uint8_t pin);
+#else
 uint8_t analogRead(uint8_t pin);
+#endif
 void analogWrite(uint8_t pin, __xdata uint16_t val);
 
 uint32_t millis(void);

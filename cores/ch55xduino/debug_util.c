@@ -1,6 +1,6 @@
 #include <stdint.h>
-#include "include/ch554.h"
-#include "include/ch554_usb.h"
+#include "include/ch5xx.h"
+#include "include/ch5xx_usb.h"
 
 //in SDCC, caller will save the registers (R0-R7)
 //DPL, DPH, B and ACC are for parameter/return value passing

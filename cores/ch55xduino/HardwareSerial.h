@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "include/ch554.h"
+#include "include/ch5xx.h"
 
 #define SERIAL0_TX_BUFFER_SIZE 16
 #define SERIAL0_RX_BUFFER_SIZE 16

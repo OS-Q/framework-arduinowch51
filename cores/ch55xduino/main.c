@@ -58,6 +58,7 @@ void INT1_ISR(void) __interrupt (INT_NO_INT1)
     intFunc[1]();
 }
 
+#if defined(CH551) || defined(CH552)
 __xdata voidFuncPtr touchKeyHandler = NULL;
 void TOUCHKEY_ISR(void) __interrupt (INT_NO_TKEY)
 {
@@ -65,6 +66,7 @@ void TOUCHKEY_ISR(void) __interrupt (INT_NO_TKEY)
         touchKeyHandler();
     }
 }
+#endif
 
 
 void main(void)

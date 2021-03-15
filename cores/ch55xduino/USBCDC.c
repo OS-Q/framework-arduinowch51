@@ -2,8 +2,8 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "include/ch554.h"
-#include "include/ch554_usb.h"
+#include "include/ch5xx.h"
+#include "include/ch5xx_usb.h"
 
 extern __xdata uint8_t Ep0Buffer[];
 extern __xdata uint8_t Ep2Buffer[];
@@ -51,12 +51,29 @@ void setControlLineStateHandler(){
 
     // We check DTR state to determine if host port is open (bit 0 of lineState).
     if ( ((controlLineState & 0x01) == 0) && (*((__xdata uint32_t *)LineCoding) == 1200) ){ //both linecoding and sdcc are little-endian
+
+#if BOOT_LOAD_ADDR == 0x3800
         USB_CTRL = 0;
-        EA = 0;                                                                    //Disabling all interrupts is required.
+        EA = 0;                     //Disabling all interrupts is required.
         delayMicroseconds(50000);
         delayMicroseconds(50000);
-        __asm__ ("lcall #0x3800");                                                 //Jump to bootloader code
+        
+        __asm__ ("lcall #0x3800");  //Jump to bootloader code
+        
         while(1);
+#elif defined(CH559) && (BOOT_LOAD_ADDR == 0xF400)
+        USB_CTRL = 0;
+        EA = 0;                     //Disabling all interrupts is required.
+        delayMicroseconds(50000);
+        delayMicroseconds(50000);
+        
+        __asm__ ("lcall #0xF400");  //Jump to bootloader code
+        
+        while(1);
+#elif BOOT_LOAD_ADDR == 0xF400
+        //todo: not working well, CH549 doesn't support direct jump
+#endif
+        
     }
     
 }

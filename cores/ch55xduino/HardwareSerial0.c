@@ -19,8 +19,8 @@ uint8_t Serial0(void){
 
 void Serial0_begin(unsigned long baud){
 
-    __xdata volatile uint32_t x;    //this is compiled in small memory model, variable won't stay in stack.
-    __xdata volatile uint8_t x2;
+    uint32_t x;
+    uint8_t x2;
     
     x = 10 * F_CPU / baud / 16;                                       //Make sure it doesn't overflow when baudrate is changed, default 9600
     x2 = ((uint16_t)x) % 10;

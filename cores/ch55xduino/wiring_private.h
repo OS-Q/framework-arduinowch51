@@ -3,8 +3,8 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "include/ch554.h"
-#include "include/ch554_usb.h"
+#include "include/ch5xx.h"
+#include "include/ch5xx_usb.h"
 
 #include "Arduino.h"
 
