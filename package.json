@@ -1,6 +1,6 @@
 {
-    "description":"Arduino CH552 Core",
-    "name":"A13A",
-    "url":"https://github.com/OS-Q/A13A",
-    "version":"0.7.0"
+    "name":"A13",
+    "description":"Arduino Core CH55X",
+    "url":"https://github.com/DeqingSun/ch55xduino",
+    "version":"0.7.1"
 }
