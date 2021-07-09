@@ -1,6 +1,6 @@
 {
-    "name":"A13",
-    "description":"Arduino Core CH55X",
+    "name":"F151",
+    "description":"WCH 8051 Arduino Core",
     "url":"https://github.com/DeqingSun/ch55xduino",
     "version":"0.7.1"
 }
