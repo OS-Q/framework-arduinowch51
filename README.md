@@ -5,4 +5,4 @@
 
 [F151](https://github.com/OS-Q/F151)
 
-### [源圈 OS-Q (Open Source & QA) ](http://www.OS-Q.com)
+### [源圈OS-Q](http://www.OS-Q.com)
