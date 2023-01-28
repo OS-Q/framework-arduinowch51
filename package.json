@@ -1,6 +1,6 @@
 {
-    "name":"framework-wch",
+    "name":"framework-arduinowch51",
     "description":"WCH 8051 Arduino Core",
-    "url":"https://github.com/DeqingSun/ch55xduino",
-    "version":"0.0.16"
+    "url":"https://github.com/OS-Q/framework-arduinowch51",
+    "version":"0.1.0"
 }

@@ -1,6 +1,6 @@
-﻿# [framework-wch](https://github.com/OS-Q/framework-wch)
+﻿# [framework-arduinowch51](https://github.com/OS-Q/framework-arduinowch51)
 
-基于[Arduino_Core_WCH51](https://github.com/OS-Q/Arduino_Core_WCH51)开发，应用于[PIO WCH 8051](https://github.com/OS-Q/platform-wch51)平台
+基于[Arduino_Core_WCH51](https://github.com/OS-Q/Arduino_Core_WCH51)开发，应用于[PIO WCH51](https://github.com/OS-Q/platform-wch51)平台
 
 | [MCU](https://github.com/SoCXin) | ROM | RAM | DATA | Fmax | USBD | USBH | USBC | TIM | UART | ADC | PWM |
 | ----- | --- | ---- | --- | --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
